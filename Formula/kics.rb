@@ -5,25 +5,30 @@
 class Kics < Formula
   desc "Find security vulnerabilities, compliance issues, and infrastructure misconfigurations in your IaC"
   homepage "https://github.com/Checkmarx/kics"
-  version "1.3.1"
+  version "1.3.3"
   license "Apache"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/Checkmarx/kics/releases/download/v1.3.1/kics_1.3.1_darwin_x64.tar.gz"
-    sha256 "7d29026ee38bfa331c38f332f47cc6796a7f874f40d2bb453ed51b372b71b41b"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_darwin_x64.tar.gz"
+      sha256 "eacf8d5f497229c37d4bcfa3cdd7d36aff1b278d9a1730280f5aa42431b4f6c8"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_darwin_arm64.tar.gz"
+      sha256 "ae93f225587b25053cf4cb925cd03309b114d9e24a7dd3f1eeb7fe421965bd4e"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/Checkmarx/kics/releases/download/v1.3.1/kics_1.3.1_darwin_arm64.tar.gz"
-    sha256 "499b432ca2a1d5750e6f57ddb31b1cd0877fe8e1ee2aad05c10a6bda1b457f78"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/Checkmarx/kics/releases/download/v1.3.1/kics_1.3.1_linux_x64.tar.gz"
-    sha256 "657b945419706612a1700573785dea8f663f96f13f9ca3d2f45b27880ea4a332"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/Checkmarx/kics/releases/download/v1.3.1/kics_1.3.1_linux_arm64.tar.gz"
-    sha256 "b2a72a8467616103a2cf4deeb7c66757d19fccc8e617b6bea6974ba1f3f70674"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_linux_x64.tar.gz"
+      sha256 "5cd2dee7b430b751c552e0311284d1cfd3296bde663f0785c8ccaf80ced92f6c"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_linux_arm64.tar.gz"
+      sha256 "a0eec6a38ba79cf90c9198733327c01306306ee32c3e7f2b9a7491ada3e874d9"
+    end
   end
 
   def caveats
