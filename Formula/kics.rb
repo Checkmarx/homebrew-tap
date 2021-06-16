@@ -12,22 +12,22 @@ class Kics < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_darwin_x64.tar.gz"
-      sha256 "3bed79df8c8d0ba6017fc8e23ec3010c82c6b8041dd06c1a8cd477cb6aa0c12a"
+      sha256 "9db6d5768133ec09a051c82901ff41eeea3a5473ea1b5474a7b3c6947d8547c0"
     end
     if Hardware::CPU.arm?
       url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_darwin_arm64.tar.gz"
-      sha256 "c19cdf8cf65aaf255c2c75d0aa94c1f6541a097aee3f05b0e2b65e9d3e0d435f"
+      sha256 "3bb3e6a82db600dbd7d46a1b13254aef70867501d61f9868bbf1c31b07e5ee04"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_linux_x64.tar.gz"
-      sha256 "6137139ace7f95be4b98858ae1abb7793a6b5f340eb434610ef9f20a7e8fb20a"
+      sha256 "9a9ad71f8a9abea7f7f31ca4cb60d29da49f05191a345ecfceef1dbd74335a90"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Checkmarx/kics/releases/download/v1.3.3/kics_1.3.3_linux_arm64.tar.gz"
-      sha256 "2a96412ab81bb7e76bc26abab6cfca871139eec6b6757bed9ed1f1fd422858a8"
+      sha256 "165e21d7613ef5925a2663ed67287d4cdb5908e7b6c898baf00839666d6f1cec"
     end
   end
 
