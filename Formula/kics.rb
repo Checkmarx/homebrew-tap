@@ -5,29 +5,29 @@
 class Kics < Formula
   desc "Find security vulnerabilities, compliance issues, and infrastructure misconfigurations in your IaC"
   homepage "https://github.com/Checkmarx/kics"
-  version "1.4.2"
+  version "1.4.3"
   license "Apache"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.2/kics_1.4.2_darwin_x64.tar.gz"
-      sha256 "d8a5bfcf975c4020c92641e591be8a1fe36fbde8fe3da38f51e8476cfe381505"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.3/kics_1.4.3_darwin_x64.tar.gz"
+      sha256 "18745d13fe3b47b9e8550c3ca7ed45bbfa71a1fed022f6127a4416db06f41579"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.2/kics_1.4.2_darwin_arm64.tar.gz"
-      sha256 "6ef347ed0443b3626ec12c66caac7eb6cca12c7a484d821d401662cfd847df3d"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.3/kics_1.4.3_darwin_arm64.tar.gz"
+      sha256 "185fad75b9c7f1a05c109d80a5c133a85d612904d02e92f10c29ae2325b5b3b0"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.2/kics_1.4.2_linux_x64.tar.gz"
-      sha256 "b230c9c24bea95e622368479868f4122f8fa33374ee9c93bb35c050afa5eaafa"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.3/kics_1.4.3_linux_x64.tar.gz"
+      sha256 "dde63617554210382a29589c4b878c018bfc93505885997a9fbed0359177aec7"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.2/kics_1.4.2_linux_arm64.tar.gz"
-      sha256 "8caa13974b9507bb8048473e7366a09081e8b3d7ce30d726e7ae3a2d4a830964"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.3/kics_1.4.3_linux_arm64.tar.gz"
+      sha256 "f95eac5a7d4eb6df00d1932fcba402defe08212c09affc034985fcad85f6792a"
     end
   end
 
