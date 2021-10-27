@@ -5,29 +5,52 @@
 class Kics < Formula
   desc "Find security vulnerabilities, compliance issues, and infrastructure misconfigurations in your IaC"
   homepage "https://github.com/Checkmarx/kics"
-  version "1.4.5"
+  version "1.4.6"
   license "Apache"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.5/kics_1.4.5_darwin_arm64.tar.gz"
-      sha256 "013e8beafceb4982724b09b322f27cdc845d84eabd4c0e882b3388d21659f65b"
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.5/kics_1.4.5_darwin_x64.tar.gz"
-      sha256 "62c872c0ef89a4256f21a094d91a9c0b7c1af0d0b7bf399ebf32523ff5fc9b08"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6/kics_1.4.6_darwin_x64.tar.gz"
+      sha256 "839359b67fe9e9c49a23ab2fcad5198e0f28b8476990081b7f4430890c2070d1"
+
+      def install
+        pkgshare.mkpath
+        cp_r "assets", pkgshare
+        bin.install "kics"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6/kics_1.4.6_darwin_arm64.tar.gz"
+      sha256 "b3f380b78b4cb9a570238e49ca76c6ddabdd6e7b111afc9a45d8bb9a2688bad5"
+
+      def install
+        pkgshare.mkpath
+        cp_r "assets", pkgshare
+        bin.install "kics"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.5/kics_1.4.5_linux_arm64.tar.gz"
-      sha256 "72c5b24ca32efd39c0bb81546446df9a19e64cf26bcad601a99adb59e8cb0ba6"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6/kics_1.4.6_linux_arm64.tar.gz"
+      sha256 "483a5d3f74eea7e6e2dae4677b41cfaafc938574dac6ddd25edec4515baffa96"
+
+      def install
+        pkgshare.mkpath
+        cp_r "assets", pkgshare
+        bin.install "kics"
+      end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.5/kics_1.4.5_linux_x64.tar.gz"
-      sha256 "10f6d36bb9d0cdf25e5b49dfdd3cd19580222c92879cc24736adbce254ae3673"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6/kics_1.4.6_linux_x64.tar.gz"
+      sha256 "0ec255caf17052059cfe882952544aad840cadcde1d4d5a78f44d6d5866ac199"
+
+      def install
+        pkgshare.mkpath
+        cp_r "assets", pkgshare
+        bin.install "kics"
+      end
     end
   end
 
@@ -40,12 +63,6 @@ class Kics < Formula
 
       usage of CLI flag --queries-path takes precedence.
     EOS
-  end
-
-  def install
-    pkgshare.mkpath
-    cp_r "assets", pkgshare
-    bin.install "kics"
   end
 
   test do
