@@ -5,13 +5,13 @@
 class Kics < Formula
   desc "Find security vulnerabilities, compliance issues, and infrastructure misconfigurations in your IaC"
   homepage "https://github.com/Checkmarx/kics"
-  version "1.4.6-1"
+  version "1.4.7"
   license "Apache"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6-1/kics_1.4.6-1_darwin_x64.tar.gz"
-      sha256 "fe63ff328c0c2e71a1282d9449ca7294519c108f78b0708305a49667ee8ed929"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.7/kics_1.4.7_darwin_x64.tar.gz"
+      sha256 "a5f46176eac1d06f732cb2e35ef026c37dbc8a729592c23341230d0542aebaa8"
 
       def install
         pkgshare.mkpath
@@ -20,8 +20,8 @@ class Kics < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6-1/kics_1.4.6-1_darwin_arm64.tar.gz"
-      sha256 "a2ac81392bd4ae22d387dff689606bf0fd17797bdb780ea7aee4eec96e8df549"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.7/kics_1.4.7_darwin_arm64.tar.gz"
+      sha256 "840fb157ece5e772dd9b59d90a7bb6d351bc1c6dd74dd6dbb0557ae764cbbaeb"
 
       def install
         pkgshare.mkpath
@@ -32,9 +32,9 @@ class Kics < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6-1/kics_1.4.6-1_linux_x64.tar.gz"
-      sha256 "f6e9d70d4c03207fdd30dbb32a283ec066a34dc05cca5250f51bcd4d62c26fd3"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.7/kics_1.4.7_linux_arm64.tar.gz"
+      sha256 "b4700bc49d8b787343d3e4537e060797ea192c9570ee0f1c9c2ec0abf91f5b47"
 
       def install
         pkgshare.mkpath
@@ -42,9 +42,9 @@ class Kics < Formula
         bin.install "kics"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.4.6-1/kics_1.4.6-1_linux_arm64.tar.gz"
-      sha256 "5f6d2eb52bdaae35c968ed5a19215b347ed0988fe44d78cccf8d28d50d2f539e"
+    if Hardware::CPU.intel?
+      url "https://github.com/Checkmarx/kics/releases/download/v1.4.7/kics_1.4.7_linux_x64.tar.gz"
+      sha256 "2f2c1a990d09e72a28fa74a0479da08702e40d429f4096ac4a2e438b536b9cf8"
 
       def install
         pkgshare.mkpath
