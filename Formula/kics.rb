@@ -11,7 +11,7 @@ class Kics < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/Checkmarx/kics/releases/download/v1.4.9/kics_1.4.9_darwin_arm64.tar.gz"
-      sha256 "57832badad521871e2ba89872f2b3d93541cfbf809d18cd6ac91ce5f400454d5"
+      sha256 "573d31a4be538884c189c737aa9f4b007722b923d9f16e263858f4a88c40f0ae"
 
       def install
         pkgshare.mkpath
@@ -21,7 +21,7 @@ class Kics < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/Checkmarx/kics/releases/download/v1.4.9/kics_1.4.9_darwin_x64.tar.gz"
-      sha256 "31887c7b8d2c1d3437ee1b7318a92b14a169567615534e47f1ea2b420a2ece2e"
+      sha256 "b528f3a205d2a0ae1929449befd09246b5eb21ad35f252d51c9453f2bf6f7962"
 
       def install
         pkgshare.mkpath
@@ -34,7 +34,7 @@ class Kics < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Checkmarx/kics/releases/download/v1.4.9/kics_1.4.9_linux_arm64.tar.gz"
-      sha256 "c85ed37c631910d37bfc0038ff0f5edd3717756d3ad252036911184e0b1f486c"
+      sha256 "31ec4a7e3c5cad12964f6231189447a7e0618b76586214c99c396cf625ecb6d6"
 
       def install
         pkgshare.mkpath
@@ -44,7 +44,7 @@ class Kics < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/Checkmarx/kics/releases/download/v1.4.9/kics_1.4.9_linux_x64.tar.gz"
-      sha256 "05a9330e90ef6a41717256ba757b007bc21c51e9a4bffa23c671de6f11e1fac1"
+      sha256 "6d0c0e165cf46521b610eff90c7cbda6b55d26876b592a52e3a687792f23204f"
 
       def install
         pkgshare.mkpath
