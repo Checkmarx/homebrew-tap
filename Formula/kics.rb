@@ -5,13 +5,13 @@
 class Kics < Formula
   desc "Find security vulnerabilities, compliance issues, and infrastructure misconfigurations in your IaC"
   homepage "https://github.com/Checkmarx/kics"
-  version "1.5.0"
+  version "1.5.1"
   license "Apache"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.5.0/kics_1.5.0_darwin_x64.tar.gz"
-      sha256 "a7ebf718bd50bcb8a071d556486cb335014ff6aa000ef0c81ecbf42f67496aff"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.5.1/kics_1.5.1_darwin_x64.tar.gz"
+      sha256 "12ca9d12f29fc8461ba6361365b1f08b3007155609bc79f16664761e3faf95a8"
 
       def install
         pkgshare.mkpath
@@ -20,8 +20,8 @@ class Kics < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.5.0/kics_1.5.0_darwin_arm64.tar.gz"
-      sha256 "306f8c87c805605b31bdbe26cf329a1be4d679496e30c5aa9434264e5d2e1b29"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.5.1/kics_1.5.1_darwin_arm64.tar.gz"
+      sha256 "a2a9d7a25d64f9d5e0c88fb6065e993a8472c5d540b4ed86746d208753251beb"
 
       def install
         pkgshare.mkpath
@@ -33,8 +33,8 @@ class Kics < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.5.0/kics_1.5.0_linux_arm64.tar.gz"
-      sha256 "3a6614f3f20efd0ab6e0828a0326ed632e44e2d38496d1c439e0019f7f5aee19"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.5.1/kics_1.5.1_linux_arm64.tar.gz"
+      sha256 "c828e42b7768df78fa653327d34c6011ba736b3e3102b10767fccc77cda94712"
 
       def install
         pkgshare.mkpath
@@ -43,8 +43,8 @@ class Kics < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Checkmarx/kics/releases/download/v1.5.0/kics_1.5.0_linux_x64.tar.gz"
-      sha256 "57540f67e262bc1ec6d2faf6b1014f74a7f99c4ad6e6e786f6d7be679c5feb3d"
+      url "https://github.com/Checkmarx/kics/releases/download/v1.5.1/kics_1.5.1_linux_x64.tar.gz"
+      sha256 "d09375d10c4376d224e116a5bf3bb12b33c030226400b2ee810073327656a8fd"
 
       def install
         pkgshare.mkpath
